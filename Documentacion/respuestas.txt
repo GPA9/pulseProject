@@ -1,0 +1,335 @@
+# RESPUESTAS A LA DOCUMENTACIÓN
+
+## 1. ROLES Y PERFILES
+**¿Hay diferentes roles? ¿Músico o usuario, pero admin el quiero implementar, que será capaz de gestionar cualquier perfil?**
+- Sí, hay 3 roles: `user`, `musician`, `admin`
+- Admin ya está implementado y puede gestionar cualquier perfil
+- El middleware AdminController protege las rutas admin
+
+**¿Los músicos pueden editar perfil? Si**
+- Sí, desde el panel de control pueden editar nombre, género, ciudad, bio, redes sociales y plataformas de streaming
+
+**¿Puedes subir foto de perfil o banner?**
+- Solo foto de perfil. Se sube a `images/band-logos/` y se muestra en el perfil del artista
+
+## 2. MÚSICA
+**¿Los músicos pueden subir canciones MP3 reales? Si**
+- Sí, archivos MP3 reales se guardan en `storage/app/public/songs/`
+
+**¿Las canciones se pueden reproducir desde la web? Si**
+- Sí, con reproductor HTML5 `<audio>` en el perfil del artista
+
+**¿Tienes reproductor global tipo Spotify?**
+- No, es reproductor simple por canción individual
+
+**¿Se registran reproducciones/escuchas a la BD?**
+- Sí, cada vez que se reproduce una canción se incrementa `play_count` en la tabla `songs`
+
+**¿Tienes likes, follows o playlists?**
+- No implementados
+
+## 3. RADIO
+**¿Cómo funciona exactamente la radio por ciudad?**
+- Filtra canciones por comunidad autónoma o provincia del músico
+- Reproducción manual, no automática
+
+**¿Las canciones se filtran según la ciudad del músico?**
+- Sí, por comunidad autónoma o provincia para evitar datos vacíos de pueblos pequeños
+
+**¿La radio es automática/random o manual?**
+- Manual
+
+**¿Utilizas AJAX/fetch/JSON para cargar los datos?**
+- Sí, usa JSON para cargar dinámicamente las canciones
+
+## 4. CONCIERTOS
+**¿Los músicos pueden crear conciertos? Si**
+- Sí, con datos: ciudad, fecha, aforo, precio, venue, ticketmaster_url
+
+**¿Se pueden comprar entradas de verdad?**
+- No, es simulación. El botón "Entradas" enlaza a Ticketmaster
+
+**¿Stripe está implementado realmente?**
+- Sí, para suscripciones. Para entradas es solo simulación
+
+**¿Hay QR, PDF o comprobante?**
+- No implementados
+
+## 5. MERCHANDISING
+**¿Los músicos pueden crear productos? Si**
+- Sí, con imagen, nombre, descripción, precio, categoría, tallas, merchbar_url
+
+**¿Qué tipo?**
+- Categorías: Camisetas, Sudaderas, Gorras, Pósters, Bolsas
+
+**¿Hay carrito de compra?**
+- No, solo enlaza a Merchbar
+
+**¿El sistema calcula la comisión del 5%?**
+- No implementado
+
+## 6. ESTADÍSTICAS
+**¿Qué estadísticas tienes implementadas?**
+- Total músicos, suscripciones activas, ingresos mensuales
+- Por músico: canciones, conciertos, merch, reproducciones
+- Por suscripción: plan, precio, estado
+
+**¿Haces gráficas?**
+- No, solo texto y badges
+
+**¿Las estadísticas son reales según las reproducciones?**
+- Sí, se calculan desde la BD
+
+## 3. PARTE TÉCNICA
+**¿Qué versión de Laravel has utilizado?**
+- Laravel 12.47.0
+
+**¿Has utilizado Laravel Breeze, Jetstream, Sanctum, Livewire, Inertia?**
+- Ninguno de esos. Implementación manual
+
+**¿Has trabajado con MVC correctamente?**
+- Sí, Models, Controllers, Views bien separados
+
+**¿Cuántas tabulas aproximadamente tiene la base de datos?**
+- ~15: users, musician_profiles, songs, albums, concerts, merch, subscriptions, etc.
+
+**¿Recuerdas algunas tablas importantes?**
+- users, musician_profiles, songs, albums, concerts, merch, subscriptions, orders
+
+**¿Has utilizado migraciones de Laravel?**
+- Sí, todas las tablas creadas con migraciones
+
+**¿Has utilizado seeders/factories?**
+- No implementados
+
+**¿Has utilizado relaciones Eloquent?**
+- Sí: hasMany, belongsTo, hasOne
+
+**¿Has utilizado APIs externas?**
+- Stripe API para pagos de suscripciones
+
+**¿Dónde guardas los archivos MP3 e imágenes?**
+- `storage/app/public/` con enlace simbólico a `public/storage/`
+
+**¿Has utilizado Git/GitHub?**
+- El proyecto está en control de versiones Git
+
+**¿Has trabajado en local con XAMPP, Laragon, Docker, Herd, otro?**
+- XAMPP
+
+## 4. DISEÑO Y FRONTEND
+**¿Qué estilo visual querías conseguir?**
+- Moderno estilo Spotify: oscuro, gradientes, cards redondeados, colores vibrantes
+
+**¿Has utilizado Bootstrap puro o también CSS propio?**
+- Bootstrap + CSS personalizado con variables CSS
+
+**¿La web es responsive para móvil?**
+- Sí, totalmente responsive
+
+**¿Tienes modo oscuro?**
+- Sí, tema oscuro por defecto
+
+**¿Vas hacer wireframes o mockups antes?**
+- No, desarrollo directo
+
+**¿Tienes captures del proyecto?**
+- El código fuente está disponible
+
+## 5. PROBLEMAS Y DIFICULTADES
+**¿Cuál ha sido el problema técnico más difícil?**
+- Implementar Stripe webhooks y manejar errores de suscripción
+
+**¿Qué te costó más?**
+- Backend: relaciones complejas y middleware
+- Stripe: configuración y manejo de errores
+- JavaScript: reproducción de audio y AJAX
+
+**¿Vas tener errores importantes?**
+- Errores de rutas (POST vs DELETE), storage paths, middleware no registrado
+
+**¿Qué vas aprender haciendo este proyecto?**
+- Integración pagos, gestión de archivos, middleware personalizado, JSON en BD
+
+## 6. ESTADO FINAL REAL
+**¿El proyecto está: acabado, semiacabado, funcional pero incompleto?**
+- Funcional pero incompleto
+
+**¿Qué NO has podido implementar?**
+- Carrito de compra real, likes/follows, radio automática, gráficas de estadísticas
+
+**¿Si tuvieras más tiempo, qué añadirías?**
+- Sistema de notificaciones, playlist, recomendaciones, chat entre músicos
+
+**¿Querrías convertirlo en una app real algún día?**
+- Sí, con las mejoras mencionadas
+
+## 7. MEMORIA
+**¿Cuánto de larga la quieres?**
+- Normal (10-15 páginas)
+
+**¿La quieres: formal académica, moderna y visual, estilo startup tecnológica, combinada?**
+- Combinada: técnica pero visual y moderna
+
+**¿Vas que también te prepare: índice automático, diagrama BD, estructura de carpetas Laravel, explicación MVC, cronología del desarrollo, conclusiones profesionales, anexos técnicos?**
+- Sí, puedo preparar todo eso
+
+---
+
+## ÚLTIMAS PREGUNTAS IMPORTANTES
+
+### 1. SUBSCRIPCIONES
+**¿Cómo se llaman los 3 planes de suscripción?**
+- Basic (5€/mes)
+- Pro (15€/mes) 
+- Premium (30€/mes)
+
+**¿Qué ofrece cada plan?**
+- **Basic**: 5GB almacenamiento, hasta 20 canciones, conciertos básicos
+- **Pro**: 15GB almacenamiento, hasta 100 canciones, merch avanzado, estadísticas
+- **Premium**: 50GB almacenamiento, canciones ilimitadas, features premium, analytics avanzados
+
+**¿Qué precio tiene cada plan?**
+- Basic: 5€/mes
+- Pro: 15€/mes
+- Premium: 30€/mes
+
+**Stripe: ¿utilizas Checkout Sessions, webhooks, Stripe Elements, o redirección simple?**
+- Checkout Sessions para pagos
+- Webhooks para actualizar estado de suscripción
+- Redirección simple al checkout
+
+**¿Cuando un usuario paga: se crea registro a la BD automáticamente?**
+- Sí, en `SubscriptionController::success()` se crea registro con estado 'active'
+
+**¿Se guarda estado de suscripción?**
+- Sí, campo `status` (active, canceled, past_due, trialing)
+
+**¿Se cancela automáticamente?**
+- Sí, mediante webhook `handleSubscriptionDeleted`
+
+### 2. ESTRUCTURA WEB
+**¿Qué páginas principales tiene la web?**
+- Home (página principal)
+- Artistas (`/musicians`)
+- Radio (`/radio`)
+- Merchandising (`/merch`)
+- Conciertos (`/concerts`)
+- Top Artistas (`/top-musicians`)
+- Perfil artista (`/musicians/{id}`)
+- Dashboard (`/dashboard`)
+- Login/Register
+- Admin (`/admin`)
+
+**¿Tienes dashboard diferente según rol?**
+- Sí: músicos ven su contenido, admin ve panel de gestión
+
+**¿Tienes navbar/footer global?**
+- Sí, en `layouts/navigation.blade.php` y `layouts/footer.blade.php`
+
+**¿Tienes búsqueda de músicos o canciones?**
+- Sí, búsqueda por nombre, género, ciudad en varias vistas
+
+### 3. BASE DE DATOS
+**¿Relaciones importantes?**
+- `User` → hasOne `MusicianProfile`
+- `MusicianProfile` → hasMany `songs`, `concerts`, `merch`, `subscriptions`
+- `Song` → belongsTo `MusicianProfile`, optional `Album`
+- `Concert` → belongsTo `MusicianProfile`
+- `Merch` → belongsTo `MusicianProfile`
+- `Subscription` → belongsTo `MusicianProfile`
+
+**¿Tienes claves foranes (foreign keys)?**
+- Sí: `musician_profile_id`, `album_id`, `user_id`
+
+**¿Tienes soft deletes o eliminación normal?**
+- Eliminación normal con `delete()`
+
+**¿Utilizas timestamps Laravel?**
+- Sí, `created_at` y `updated_at` automáticos
+
+### 4. SEGURETAT
+**¿Has implementado middleware auth?**
+- Sí, `auth` middleware en rutas protegidas
+
+**¿Verificación permisos?**
+- `admin` middleware para rutas admin
+- Verificación de suscripción activa para subir música
+
+**¿Validación formularios?**
+- Sí, `validate()` en controllers
+
+**¿Validación de archivos MP3 y imágenes?**
+- Sí: `mimes:jpeg,jpg,png`, `max:5120` para imágenes
+- `mimes:mp3`, `max:20480` para MP3
+
+**¿Has protegido rutas para que solo músicos puedan subir música?**
+- Sí, check `active()` subscription en `SongController`
+
+### 5. FRONTEND / UX
+**¿Qué colores principales utiliza PULSE?**
+- Primario: `#efd9b5` (dorado)
+- Verde: `#10b981`, `#34d399`
+- Azul: `#60a5fa`
+- Púrpura: `#c084fc`
+- Amarillo: `#fbbf24`
+- Fondo oscuro: negro/grises
+
+**¿Tienes animaciones o efectos hover?**
+- Sí: hover en cards, transiciones suaves, overlays en imágenes
+
+**¿Qué parte visual estás más orgulloso?**
+- Hero del perfil de artista con imagen de fondo y redes sociales
+
+**¿Qué apartat creus que és el més fort del projecte?**
+- Gestión de suscripciones con Stripe integración completa
+
+### 6. DESENVOLUPAMENT
+**¿Cuánto tiempo has tardado aproximadamente?**
+- 2-3 semanas de desarrollo intensivo
+
+**¿Has trabajado cada día o a fases?**
+- A fases: primero auth/perfiles, luego música, luego suscripciones, finalmente admin
+
+**¿Qué funcionalidad hiciste primero?**
+- Sistema de autenticación y perfiles de músicos
+
+**¿Qué funcionalidad fue la última?**
+- Panel de administración completo
+
+### 7. FUTUR DEL PROJECTE
+**¿Cómo ganaría dinero exactamente?**
+- Comisión 5% en merchandising
+- Suscripciones premium (modelo actual)
+- Entradas a conciertos (futuro)
+
+**¿Qué sería el modelo de negocio definitivo?**
+- Freemium: música gratuita con ads, premium sin ads + features
+
+**¿Cómo te diferenciarías de Spotify o SoundCloud?**
+- Enfoque local: artistas de comunidades autónomas
+- Herramientas para gestión de conciertos y merch
+- Conexión directa fans-artistas locales
+
+**¿El público objetivo sería?**
+- Grupos locales/amateurs
+- Fans de música indie local
+- Promotores de conciertos regionales
+
+### 8. MATERIAL EXTRA
+**¿Tienes: logo, captures, esquema BD, diagrama UML, GitHub?**
+- Logo: Si
+- Captures: El código fuente está disponible
+- Esquema BD: En migraciones Laravel
+- Diagrama UML: No
+- GitHub: El proyecto está en control de versiones
+
+**¿Vols que et prepari també: conclusions personals llargues, introducció professional, justificació tècnica de tecnologies, explicació detallada Laravel MVC, explicació Stripe, apartat de seguretat, apartat responsive, apartat legal/limitacions?**
+- Sí, puedo preparar todo eso
+
+**¿La memòria la vols en català, castellà o barrejat?**
+- Catala
+
+---
+
+**NOTA**: Esta es una respuesta preliminar. Si necesitas expandir alguna sección o añadir más detalles técnicos, puedo desarrollarla más.

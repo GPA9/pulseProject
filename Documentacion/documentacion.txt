@@ -1,0 +1,203 @@
+Hi ha diferents rols? music o usuari, pero admin el vull implementar, que sera capaç de gestionar cualsevol perfil
+(usuari, músic, admin…)
+Els músics poden editar perfil? Si
+Pots pujar foto de perfil o banner? foto de perfil
+Música
+Els músics poden pujar cançons MP3 reals? Si
+Les cançons es poden reproduir des de la web? Si
+Tens reproductor global tipus Spotify o només reproductor simple? tinc un reproductor que li dones play y es reprodueixen les cançons dels grups per comunitat autonoma, provincia o ubicacio
+Es registren reproduccions/escoltes a la BD? No estic segur
+Tens likes, follows o playlists? No
+Ràdio
+Com funciona exactament la ràdio per ciutat? li dones play per reproduir i pots passar canço
+Les cançons es filtren segons la ciutat del músic? segons comunitat autonoma o provincia, ja que hi han molts pobles i ciutats i pot ser massa extens amb dades buides
+La ràdio és automàtica/random o manual? manual
+Utilitzes AJAX/fetch/JSON per carregar les dades? No estic segur, diria que json
+Concerts
+Els músics poden crear concerts? Si
+Quines dades guarda un concert? 
+(ciutat, data, aforament, preu…)
+Es poden comprar entrades de veritat o és simulació?
+Stripe està implementat realment o només simulat visualment?
+Hi ha QR, PDF o comprovant?
+Merchandising
+Els músics poden crear productes?
+Quin tipus?
+(samarretes, CDs, vinils…)
+Hi ha carret de compra?
+El sistema calcula la comissió del 5%?
+Estadístiques
+Quines estadístiques tens implementades?
+Fas gràfiques?
+Si sí:
+amb Chart.js?
+ApexCharts?
+Google Charts?
+Les estadístiques són reals segons les reproduccions?
+3. PART TÈCNICA
+Quina versió de Laravel has utilitzat?
+Has utilitzat:
+Laravel Breeze
+Jetstream
+Sanctum
+Livewire
+Inertia
+cap d’aquests?
+Has treballat amb MVC correctament?
+(Models, Controllers, Views)
+Quantes taules aproximadament té la base de dades?
+Recordes algunes taules importants?
+(users, songs, concerts…)
+Has utilitzat migracions de Laravel?
+Has utilitzat seeders/factories?
+Has utilitzat relacions Eloquent?
+(hasMany, belongsTo…)
+Has utilitzat APIs externes?
+On guardes els arxius MP3 i imatges?
+storage
+cloud
+public
+Has utilitzat Git/GitHub?
+Has treballat en local amb:
+XAMPP
+Laragon
+Docker
+Herd
+altre?
+4. DISSENY I FRONTEND
+Quin estil visual volies aconseguir?
+(modern, estil Spotify, minimalista…)
+Has utilitzat Bootstrap pur o també CSS propi?
+La web és responsive per mòbil?
+Tens mode fosc?
+Vas fer wireframes o mockups abans?
+Encara que sigui a paper.
+Tens captures del projecte?
+(després les podem mencionar a la memòria)
+5. PROBLEMES I DIFICULTATS
+Això és molt important per la memòria.
+Quin ha estat el problema tècnic més difícil?
+Què et va costar més:
+backend
+base de dades
+frontend
+Stripe
+JavaScript
+Laravel
+Vas tenir errors importants?
+(sessions, rutes, autenticació, storage, SMTP…)
+Què vas aprendre fent aquest projecte?
+6. ESTAT FINAL REAL
+El projecte està:
+acabat
+semiacabat
+funcional però incomplet
+Què NO has pogut implementar?
+Si tinguessis més temps, què afegiries?
+Voldries convertir-lo en una app real algun dia?
+7. MEMÒRIA
+Quant de llarga la vols?
+curta (5-8 pàgines)
+normal (10-15)
+molt completa (20+)
+La vols:
+formal acadèmica
+moderna i visual
+estil startup tecnològica
+combinada
+Vols que també et prepari:
+índex automàtic
+diagrama BD
+estructura de carpetes Laravel
+explicació MVC
+cronologia del desenvolupament
+conclusions professionals
+annexos tècnics
+
+
+preguntas 2
+
+ÚLTIMES PREGUNTES IMPORTANTS
+1. SUBSCRIPCIONS
+Com es diuen els 3 plans de subscripció?
+Què ofereix cada pla?
+(espai emmagatzematge, nombre de cançons, avantatges…)
+Quin preu té cada pla?
+Stripe:
+utilitzes Checkout Sessions?
+webhooks?
+Stripe Elements?
+o redirecció simple?
+Quan un usuari paga:
+es crea registre a la BD automàticament?
+es guarda estat de subscripció?
+es cancel·la automàticament?
+2. ESTRUCTURA WEB
+Quines pàgines principals té la web?
+Exemple:
+Home
+Artistes
+Concerts
+Merchandising
+Perfil artista
+Dashboard
+Login/Register
+Tens dashboard diferent segons rol?
+Tens navbar/footer global?
+Tens cerca de músics o cançons?
+3. BASE DE DADES
+Recordes relacions importants?
+Exemple:
+user → hasOne musicianProfile
+musicianProfile → hasMany songs
+Tens claus foranes (foreign keys)?
+Tens soft deletes o eliminació normal?
+Utilitzes timestamps Laravel?
+4. SEGURETAT
+Has implementat:
+middleware auth
+verificació permisos
+validació formularis
+Fas validació de fitxers MP3 i imatges?
+(mida, extensió…)
+Has protegit rutes perquè només músics puguin pujar música?
+5. FRONTEND / UX
+Quins colors principals utilitza PULSE?
+Tens animacions o efectes hover?
+Quina part visual estàs més orgullós?
+Quin apartat creus que és el més fort del projecte?
+6. DESENVOLUPAMENT
+Quant temps has trigat aproximadament a fer-lo?
+Has treballat cada dia o a fases?
+Quina funcionalitat vas fer primer?
+Quina funcionalitat va ser la última?
+7. FUTUR DEL PROJECTE
+Si fos real:
+com guanyaria diners exactament?
+quin seria el model de negoci definitiu?
+Com et diferenciaries de Spotify o SoundCloud?
+El públic objectiu seria:
+grups locals?
+grups amateurs?
+sales de concerts?
+fans de música indie?
+8. MATERIAL EXTRA
+Tens:
+logo?
+captures?
+esquema BD?
+diagrama UML?
+GitHub?
+Vols que et prepari també:
+conclusions personals llargues
+introducció professional
+justificació tècnica de tecnologies
+explicació detallada Laravel MVC
+explicació Stripe
+apartat de seguretat
+apartat responsive
+apartat legal/limitacions
+La memòria la vols:
+en català
+castellà
+o barrejat?

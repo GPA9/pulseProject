@@ -1,0 +1,331 @@
+:root {
+    --pulse-bg: #121212;
+    --pulse-surface: #181818;
+    --pulse-surface-hover: #282828;
+    --pulse-primary: #EFE1B5;
+    --pulse-primary-hover: #e0d0a0;
+    --pulse-text: #FFFFFF;
+    --pulse-text-secondary: #B3B3B3;
+    --pulse-border: #333333;
+}
+
+body {
+    background-color: var(--pulse-bg);
+    color: var(--pulse-text);
+    font-family: 'Outfit', sans-serif;
+    padding-top: 70px;
+    /* Space for fixed navbar */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: var(--pulse-text);
+}
+
+.text-primary {
+    color: var(--pulse-primary) !important;
+}
+
+.text-muted {
+    color: var(--pulse-text-secondary) !important;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--pulse-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-brand img {
+    height: 42px;
+    width: auto;
+}
+
+.navbar-custom .container-fluid {
+    min-height: 64px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--pulse-text-secondary) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--pulse-primary) !important;
+    background-color: rgba(239, 225, 181, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--pulse-primary);
+    border-color: var(--pulse-primary);
+    color: #121212;
+    font-weight: 700;
+    border-radius: 500px;
+    /* Pill shape */
+    padding: 0.5rem 1.5rem;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--pulse-primary-hover);
+    border-color: var(--pulse-primary-hover);
+    color: #121212;
+    transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+    color: var(--pulse-text);
+    border-color: var(--pulse-text-secondary);
+    border-radius: 500px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--pulse-text-secondary);
+    color: #000;
+}
+
+/* Cards */
+.card {
+    background-color: var(--pulse-surface);
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: var(--pulse-surface-hover);
+}
+
+.card-title {
+    color: var(--pulse-text);
+}
+
+.card-text {
+    color: var(--pulse-text-secondary);
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    background-color: #333;
+    border: 1px solid transparent;
+    color: var(--pulse-text);
+    border-radius: 4px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #333;
+    border-color: var(--pulse-primary);
+    color: var(--pulse-text);
+    box-shadow: 0 0 0 2px rgba(239, 225, 181, 0.25);
+}
+
+/* Custom Utilities */
+.bg-gradient-hero {
+    background: linear-gradient(180deg, #1a1a1a 0%, var(--pulse-bg) 100%);
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.rounded-circle-img {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* Audio Player */
+audio {
+    filter: invert(100%) sepia(20%) saturate(500%) hue-rotate(50deg);
+}
+
+/* =====================
+   MERCH PAGE
+   ===================== */
+.merch-sidebar {
+    background-color: var(--pulse-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 80px;
+}
+
+.merch-sidebar .filter-section {
+    border-bottom: 1px solid var(--pulse-border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.merch-sidebar .filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.merch-sidebar .filter-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--pulse-text-secondary);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.merch-card {
+    background-color: var(--pulse-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-card:hover {
+    transform: translateY(-4px);
+    background-color: var(--pulse-surface-hover);
+}
+
+.merch-card .merch-img-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.merch-card .merch-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.merch-card:hover .merch-img-wrap img {
+    transform: scale(1.05);
+}
+
+.merch-card .merch-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--pulse-primary);
+    color: #121212;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.merch-card .merch-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-card .merch-artist {
+    font-size: 0.75rem;
+    color: var(--pulse-primary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.merch-card .merch-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--pulse-text);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.merch-card .merch-city {
+    font-size: 0.78rem;
+    color: var(--pulse-text-secondary);
+    margin-bottom: auto;
+}
+
+.merch-card .merch-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--pulse-border);
+}
+
+.merch-card .merch-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--pulse-text);
+}
+
+.merch-search-bar {
+    background-color: var(--pulse-surface);
+    border: 1px solid var(--pulse-border);
+    border-radius: 50px;
+    padding: 0.6rem 1.25rem;
+    color: var(--pulse-text);
+    width: 100%;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.merch-search-bar:focus {
+    outline: none;
+    border-color: var(--pulse-primary);
+    box-shadow: 0 0 0 3px rgba(239, 225, 181, 0.15);
+    background-color: var(--pulse-surface);
+    color: var(--pulse-text);
+}
+
+.merch-search-bar::placeholder {
+    color: var(--pulse-text-secondary);
+}
+
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--pulse-surface-hover);
+    border: 1px solid var(--pulse-border);
+    border-radius: 50px;
+    padding: 3px 12px;
+    font-size: 0.78rem;
+    color: var(--pulse-text-secondary);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+    border-color: var(--pulse-primary);
+    color: var(--pulse-primary);
+}
